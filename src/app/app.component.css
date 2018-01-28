@@ -1,0 +1,14 @@
+.mycontent {
+  position: relative;
+}
+
+.pgcontent {
+  min-height: 500px;
+  background-color: antiquewhite;
+  position: relative;
+}
+
+
+.foot {
+  position: relative;
+}

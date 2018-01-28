@@ -1,0 +1,39 @@
+@media screen and (min-width: 768px){
+      .rwd-break { display: none; }
+  }
+
+.img {
+  width: 180px;
+  height: 180px;
+}
+h1 {
+  font-size: 16px;
+  font-weight: 500;
+}
+h2 {
+  font-size: 14px;
+  font-weight: 500;
+}
+.box {
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px 0 rgba(156, 145, 139, 0.938);
+  color: black;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+span {
+  font-weight: 800;
+  color: rgb(88, 85, 85);
+}
+.load-more {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  min-height: 50px;
+}
+.secondaryLoader {
+  width: 100%;
+  padding-left: 48vw;
+  transform: scale(0.4);
+}

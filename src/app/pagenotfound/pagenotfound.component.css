@@ -1,0 +1,7 @@
+.pagenotfound {
+  text-align: center;
+  color: rgb(121, 168, 67);
+}
+.pagenotfound:hover{
+  color:green;
+}

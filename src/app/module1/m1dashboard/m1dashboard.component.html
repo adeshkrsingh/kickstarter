@@ -1,0 +1,117 @@
+<!-- <div> -->
+  <!-- <p *ngFor="let d of projectData"> -->
+     <!-- {{d['amt.pledged'] }} -->
+     <!-- {{d.by}}
+     {{d.country}}
+     {{d.currency}}
+     {{d.end.time}}
+     {{d.location}}
+     {{d.percentage.funded}}
+     {{d.num.backers}}
+     {{d.state}}
+    {{d.title}}
+    {{d.type}}
+    {{d.url}}
+    {{d.blurb}} -->
+  <!-- </p> -->
+<!-- </div> -->
+
+<app-loader4 *ngIf="showLoader"></app-loader4>
+
+<div class="row" style="width: 95%; margin-left: 2%;">
+  <div class="box col-md-12 col-sm-12 col-xl-12 col-xs-12 float-left"  *ngFor="let d of projectData">
+
+    <div class="col-xs-12 col-sm-12 col-md-3 col-xl-3 float-left text-center">
+      <img class="img" src="/assets/images/ironman.png">
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-9 col-xl-9  float-left">
+      <h1>
+        
+        <span>
+          <i class="fa fa-check" aria-hidden="true"></i> Title :</span> {{d.title}} </h1>
+      <h2>
+        
+        <span>
+          <i class="fa fa-leaf" aria-hidden="true"></i> Blurb :</span> {{d.blurb}} </h2>
+
+      <h2>
+        
+        <!-- <span>s.no</span>100 &nbsp; &nbsp; &nbsp; -->
+        
+        <span>
+          <i class="fa fa-user-circle" aria-hidden="true"></i> By :</span> {{d.by}} &nbsp; &nbsp; &nbsp; <br class="rwd-break">
+        
+          <span>
+          <i class="fa fa-clock-o" aria-hidden="true"></i> End.time :</span> {{d['end.time'] | date}} </h2>
+
+
+      <h2>
+        
+        <span>
+          <i class="fa fa-credit-card" aria-hidden="true"></i> Amt.pledged :</span> {{d['amt.pledged'] }} &nbsp; &nbsp; &nbsp; <br class="rwd-break">
+        
+          <span>
+          <i class="fa fa-money" aria-hidden="true"></i> Currency :</span> {{d.currency}} &nbsp; &nbsp; &nbsp; <br class="rwd-break">
+        
+          <span>
+          <i class="fa fa-percent" aria-hidden="true"></i> Percentage.funded :</span> {{d['percentage.funded']}}  &nbsp; &nbsp; &nbsp; <br class="rwd-break">
+        
+          <span>
+          <i class="fa fa-users" aria-hidden="true"></i> Num.backers :</span> {{d['num.backers']}} </h2>
+      <h2>
+        
+        <span>
+          <i class="fa fa-thumb-tack" aria-hidden="true"></i> Type :</span> {{d.type}} &nbsp; &nbsp; &nbsp; <br class="rwd-break">
+        
+          <span>
+          <i class="fa fa-location-arrow" aria-hidden="true"></i> State :</span> {{d.state}} &nbsp; &nbsp; &nbsp; <br class="rwd-break">
+        
+          <span>
+          <i class="fa fa-globe" aria-hidden="true"></i> Country :</span> {{d.country}} &nbsp; &nbsp; &nbsp; <br class="rwd-break">
+        
+          <span>
+          <i class="fa fa-map-marker" aria-hidden="true"></i> Location :</span> {{d.location}} </h2>
+
+      <button class="btn btn-success float-right">
+        <a href="{{d.url}}" target="_blank"></a>
+        <i class="fa fa-link" aria-hidden="true"></i> Start Project</button>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div *ngIf="showSecondaryLoader" class="secondaryLoader">
+  <app-loader3></app-loader3>
+</div>
+
+
+<div class="text-center load-more">
+  <button class="btn btn-primary" (click)="addMoreData()">Load More Data <i class="fa fa-arrow-circle-down" aria-hidden="true"></i></button>
+</div>
+<!-- <div class="container">
+  <div class="box col-12 float-left">
+    <div class="col-3  float-left">
+      <img class="img" src="/assets/images/ironman.png"> 
+    </div>
+    <div class="col-9  float-left">
+      <h1> <span> <i class="fa fa-check" aria-hidden="true"></i> Title :</span>Helios Touch Modular Lighting</h1>
+      <h2><span><i class="fa fa-leaf" aria-hidden="true"></i> Blurb :</span> Helios is a modular touch screen wall light that turns walls into a canvas for illumination, using your hand as the brush.</h2>
+
+      <h2><span>s.no</span>100 &nbsp; &nbsp; &nbsp;
+      <span><i class="fa fa-user-circle" aria-hidden="true"></i> By :</span>Dyena  &nbsp; &nbsp; &nbsp; <span><i class="fa fa-clock-o" aria-hidden="true"></i> End.time :</span>2016-12-17T09:44:39-05:00</h2>
+      
+      
+      <h2><span><i class="fa fa-credit-card" aria-hidden="true"></i> Amt.pledged :</span>10573  &nbsp; &nbsp; &nbsp; <span><i class="fa fa-money" aria-hidden="true"></i> Currency :</span>gbp  &nbsp; &nbsp; &nbsp; <span><i class="fa fa-percent" aria-hidden="true"></i> Percentage.funded :</span>10  &nbsp; &nbsp; &nbsp; <span><i class="fa fa-users" aria-hidden="true"></i> Num.backers :</span>14952</h2>
+      <h2><span><i class="fa fa-thumb-tack" aria-hidden="true"></i> Type :</span>Town  &nbsp; &nbsp; &nbsp; <span><i class="fa fa-location-arrow" aria-hidden="true"></i> State :</span>England  &nbsp; &nbsp; &nbsp; <span><i class="fa fa-globe" aria-hidden="true"></i> Country :</span>GB  &nbsp; &nbsp; &nbsp; <span><i class="fa fa-map-marker" aria-hidden="true"></i> Location :</span>Southampton, UK</h2>
+      
+      <button class="btn btn-success"> <a href="/projects/1987956413/helios-touch-modular-lighting?ref=discovery" target="_blank"></a> <i class="fa fa-link" aria-hidden="true"></i> Start Project</button>
+
+    </div>
+  </div>
+</div> -->
+<!-- { "s.no":100, "amt.pledged":10573, "blurb":"", "by":"Dyena", "country":"GB", "currency":"gbp", "end.time":"2016-12-17T09:44:39-05:00",
+"location":"Southampton, UK", "percentage.funded":10, "num.backers":"14952", "state":"England", "title":"Helios Touch Modular
+Lighting", "type":"Town", "url":"/projects/1987956413/helios-touch-modular-lighting?ref=discovery" } -->
