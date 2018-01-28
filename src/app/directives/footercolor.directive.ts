@@ -5,11 +5,11 @@ import { ThemecolorsService } from '../services/themecolors.service';
   selector: '[appFootercolor]'
 })
 export class FootercolorDirective {
-  @Input() fcolor1= '#393d40';
+  @Input() fcolor1= '#a04000';
 
   constructor(element: ElementRef, private theme: ThemecolorsService) {
     this.fcolor1 = this.theme.emmit1.subscribe(res => {
-      console.log(res);
+      // console.log(res);
       element.nativeElement.style.backgroundColor = res;
     });
     // element.nativeElement.style.backgroundColor = '#393d40';

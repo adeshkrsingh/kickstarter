@@ -17,7 +17,7 @@ export class ThemecolorsService {
   ngOnInit() { }
 
   public applicationLoad() {
-    this.set_hB('#393d40');
+    this.set_hB('#a04000');
   }
 
   public set_hB(content: string) {

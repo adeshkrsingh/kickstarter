@@ -21,6 +21,7 @@ export class ApiconnectionService {
     this.API_hit_counter = this.API_hit_counter + 1;
     return this.dRecieved;
   }
+  
   public postData(url, jsonData) {
     this.dRecieved = this.http.post(this.baseurl + url , jsonData )
       .map(res => res.json() );

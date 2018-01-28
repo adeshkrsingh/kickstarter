@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   loadedData: any;
   toggleMenu: boolean;
 
-  constructor(private http: Http) { }
+  // constructor(private http: Http) { }
 
   ngOnInit() {
     this.toggleMenu = false;

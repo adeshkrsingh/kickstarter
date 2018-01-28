@@ -12,7 +12,6 @@ export class FooterComponent implements OnInit {
   constructor(private theme: ThemecolorsService) { }
 
   ngOnInit() {
-    this.footerBg = this.theme.emmit1.subscribe(res => console.log(res));
     this.theme.applicationLoad();
   }
 

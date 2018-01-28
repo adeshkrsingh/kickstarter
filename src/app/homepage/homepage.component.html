@@ -1,1 +1,8 @@
-<app-loader4></app-loader4>
+<app-loader4 *ngIf="loading"></app-loader4>
+
+<div  *ngIf="!loading" class="get-started">
+    <h1>We Connect Peoples around cornor of the world</h1>
+    <button appFootercolor class="btn">Lets Get Started
+        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+    </button>
+</div>

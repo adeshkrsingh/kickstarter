@@ -4,6 +4,7 @@
 
 .pgcontent {
   min-height: 500px;
+  height: fit-content;
   /* background-color: antiquewhite; */
   background-image: url('/assets/images/round.png');
   position: relative;

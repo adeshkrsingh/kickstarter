@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Lobster';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Lobster Bold'), local('Lobster-Bold'), url('/assets/fonts/Lobster/Lobster-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Rammetto_One';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Rammetto_One Bold'), local('Rammetto_One-Bold'), url('/assets/fonts/Rammetto_One/Rammetto_One-Regular.ttf') format('truetype');
+}
+
+
+.get-started {
+    font-family: 'Lobster';
+    width: 100%;
+    height: 80vh;
+    padding-top: 40vh;
+    color: black;
+    font-weight: 800;
+    text-align: center;
+    position: relative;
+}
+.btn {
+    font-family: 'Rammetto_One';
+    color: white;
+    padding-top: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
