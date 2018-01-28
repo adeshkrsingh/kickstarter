@@ -8,7 +8,7 @@
 }
 h1 {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 800;
 }
 h2 {
   font-size: 14px;
@@ -24,7 +24,7 @@ h2 {
 }
 span {
   font-weight: 800;
-  color: rgb(88, 85, 85);
+  color: rgb(126, 115, 115);
 }
 .load-more {
   width: 100%;
@@ -36,4 +36,29 @@ span {
   width: 100%;
   padding-left: 48vw;
   transform: scale(0.4);
+}
+
+.search-val {
+  width: 95%;
+  /* min-width: 200px; */
+  height: auto;
+  position: absolute;
+  background-color: #fff;
+  z-index: 10;
+  color: black;
+}
+.search-val>div{
+  padding-left: 15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.search-val>div:hover {
+  background-color: rgb(233, 213, 213);
+}
+.search-val>div>p {
+  overflow: hidden;
+}
+.reached-end  {
+  margin-bottom: 0px;
+  padding-bottom: 20px;
 }

@@ -10,7 +10,7 @@ const routes: Routes = [
     component: HomepageComponent,
   },
   {
-    path: 'user',
+    path: 'project',
     loadChildren: './module1/module1.module#Module1Module',
   },
   // {

@@ -1,7 +1,10 @@
+<div id="m1dashboard">
+
+
 <!-- <div> -->
-  <!-- <p *ngFor="let d of projectData"> -->
-     <!-- {{d['amt.pledged'] }} -->
-     <!-- {{d.by}}
+<!-- <p *ngFor="let d of projectData"> -->
+<!-- {{d['amt.pledged'] }} -->
+<!-- {{d.by}}
      {{d.country}}
      {{d.currency}}
      {{d.end.time}}
@@ -13,13 +16,56 @@
     {{d.type}}
     {{d.url}}
     {{d.blurb}} -->
-  <!-- </p> -->
+<!-- </p> -->
 <!-- </div> -->
+
+
+<div class="row" style="padding-top:25px;">
+  <div class="col-12">
+
+    <form #myForm="ngForm" (ngSubmit)="submitSearchForm(myForm)">
+      <div class="form-group col-xl-4 col-md-4 col-sm-12 col-xs-12 float-left">
+        <input type="text" (keyup)="submitSearchForm(myForm)" required class="form-control" #search id="search" ngModel name="search" placeholder="Enter the text to search"
+         (keydown)="keyDown($event)" >
+
+        <div class="search-val">
+          <div *ngFor="let ser of searchData;  let j=index" id="Suggestion{{j+1}}" >
+            <p (click)='mydataSelect(search, opt, j)'[innerHtml]="ser | highlighter:searchingValue "></p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-group col-xl-3 col-md-3 col-sm-12 col-xs-12 float-left">
+
+        <select class="form-control" id="opt" #opt ngModel name="opt">
+          <option value="name" selected='selected'> name </option>
+          <option value="location"> location </option>
+        </select>
+      </div>
+      <div class="form-group col-xl-1 col-md-2 col-sm-12 col-xs-12 float-left">
+        <button class='btn btn-outline-dark'>
+          <i class="fa fa-search" aria-hidden="true"></i> Search </button>
+      </div>
+    </form>
+
+    <div class="form-group col-xl-4 col-md-4 col-sm-12 col-xs-12 float-left">
+
+      <button class='btn btn-outline-dark' (click)='getSortedValue("end.time")'>
+        <i class="fa fa-filter" aria-hidden="true"></i>  End time </button>
+
+      <button class='btn btn-outline-dark' (click)='getSortedValue("percentage.funded")'>
+        <i class="fa fa-filter" aria-hidden="true"></i> % funded  </button>
+    </div>
+
+
+  </div>
+</div>
 
 <app-loader4 *ngIf="showLoader"></app-loader4>
 
 <div class="row" style="width: 95%; margin-left: 2%;">
-  <div class="box col-md-12 col-sm-12 col-xl-12 col-xs-12 float-left"  *ngFor="let d of projectData">
+  <div class="box col-md-12 col-sm-12 col-xl-12 col-xs-12 float-left" *ngFor="let d of projectData">
 
     <div class="col-xs-12 col-sm-12 col-md-3 col-xl-3 float-left text-center">
       <img class="img" src="/assets/images/ironman.png">
@@ -27,50 +73,57 @@
 
     <div class="col-xs-12 col-sm-12 col-md-9 col-xl-9  float-left">
       <h1>
-        
+
         <span>
           <i class="fa fa-check" aria-hidden="true"></i> Title :</span> {{d.title}} </h1>
       <h2>
-        
+
         <span>
           <i class="fa fa-leaf" aria-hidden="true"></i> Blurb :</span> {{d.blurb}} </h2>
 
       <h2>
-        
+
         <!-- <span>s.no</span>100 &nbsp; &nbsp; &nbsp; -->
-        
+
         <span>
-          <i class="fa fa-user-circle" aria-hidden="true"></i> By :</span> {{d.by}} &nbsp; &nbsp; &nbsp; <br class="rwd-break">
-        
-          <span>
+          <i class="fa fa-user-circle" aria-hidden="true"></i> By :</span> {{d.by}} &nbsp; &nbsp; &nbsp;
+        <br class="rwd-break">
+
+        <span>
           <i class="fa fa-clock-o" aria-hidden="true"></i> End.time :</span> {{d['end.time'] | date}} </h2>
 
 
       <h2>
-        
+
         <span>
-          <i class="fa fa-credit-card" aria-hidden="true"></i> Amt.pledged :</span> {{d['amt.pledged'] }} &nbsp; &nbsp; &nbsp; <br class="rwd-break">
-        
-          <span>
-          <i class="fa fa-money" aria-hidden="true"></i> Currency :</span> {{d.currency}} &nbsp; &nbsp; &nbsp; <br class="rwd-break">
-        
-          <span>
-          <i class="fa fa-percent" aria-hidden="true"></i> Percentage.funded :</span> {{d['percentage.funded']}}  &nbsp; &nbsp; &nbsp; <br class="rwd-break">
-        
-          <span>
+          <i class="fa fa-credit-card" aria-hidden="true"></i> Amt.pledged :</span> {{d['amt.pledged'] }} &nbsp; &nbsp; &nbsp;
+        <br class="rwd-break">
+
+        <span>
+          <i class="fa fa-money" aria-hidden="true"></i> Currency :</span> {{d.currency}} &nbsp; &nbsp; &nbsp;
+        <br class="rwd-break">
+
+        <span>
+          <i class="fa fa-percent" aria-hidden="true"></i> Percentage.funded :</span> {{d['percentage.funded']}} &nbsp; &nbsp; &nbsp;
+        <br class="rwd-break">
+
+        <span>
           <i class="fa fa-users" aria-hidden="true"></i> Num.backers :</span> {{d['num.backers']}} </h2>
       <h2>
-        
+
         <span>
-          <i class="fa fa-thumb-tack" aria-hidden="true"></i> Type :</span> {{d.type}} &nbsp; &nbsp; &nbsp; <br class="rwd-break">
-        
-          <span>
-          <i class="fa fa-location-arrow" aria-hidden="true"></i> State :</span> {{d.state}} &nbsp; &nbsp; &nbsp; <br class="rwd-break">
-        
-          <span>
-          <i class="fa fa-globe" aria-hidden="true"></i> Country :</span> {{d.country}} &nbsp; &nbsp; &nbsp; <br class="rwd-break">
-        
-          <span>
+          <i class="fa fa-thumb-tack" aria-hidden="true"></i> Type :</span> {{d.type}} &nbsp; &nbsp; &nbsp;
+        <br class="rwd-break">
+
+        <span>
+          <i class="fa fa-location-arrow" aria-hidden="true"></i> State :</span> {{d.state}} &nbsp; &nbsp; &nbsp;
+        <br class="rwd-break">
+
+        <span>
+          <i class="fa fa-globe" aria-hidden="true"></i> Country :</span> {{d.country}} &nbsp; &nbsp; &nbsp;
+        <br class="rwd-break">
+
+        <span>
           <i class="fa fa-map-marker" aria-hidden="true"></i> Location :</span> {{d.location}} </h2>
 
       <button class="btn btn-success float-right">
@@ -83,14 +136,27 @@
 
 
 
-<div *ngIf="showSecondaryLoader" class="secondaryLoader">
+<div *ngIf="showSecondaryLoader && !pageDataEndStatus" class="secondaryLoader">
   <app-loader3></app-loader3>
 </div>
 
 
 <div class="text-center load-more">
-  <button class="btn btn-primary" (click)="addMoreData()">Load More Data <i class="fa fa-arrow-circle-down" aria-hidden="true"></i></button>
+  <button class="btn btn-primary" (click)="addMoreData()">Load More Data
+    <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+  </button>
 </div>
+
+
+
+<div class="search-results" infinite-scroll [infiniteScrollDistance]="0" [infiniteScrollThrottle]="300" (scrolled)="onScroll()">
+</div>
+
+<div *ngIf="pageDataEndStatus" class="reached-end">
+  <p> You reached to the End of the page </p>
+</div>
+
+
 <!-- <div class="container">
   <div class="box col-12 float-left">
     <div class="col-3  float-left">
@@ -115,3 +181,9 @@
 <!-- { "s.no":100, "amt.pledged":10573, "blurb":"", "by":"Dyena", "country":"GB", "currency":"gbp", "end.time":"2016-12-17T09:44:39-05:00",
 "location":"Southampton, UK", "percentage.funded":10, "num.backers":"14952", "state":"England", "title":"Helios Touch Modular
 Lighting", "type":"Town", "url":"/projects/1987956413/helios-touch-modular-lighting?ref=discovery" } -->
+
+
+
+
+
+</div>
